@@ -3,57 +3,94 @@
 ---
 
 <header>
-  <h1>San Juan Opico</h1>
+	<h1>San Juan Opico</h1>
 
-  <label>
-    <input class="toggle-checkbox" type="checkbox" id="themeSwitch" />
-    <div class="toggle-slot">
-      <div class="sun-icon-wrapper">
-        <div
-          class="iconify sun-icon"
-          data-icon="feather-sun"
-          data-inline="false"
-        >
-        </div>
-      </div>
-      <div class="toggle-button"></div>
-      <div class="moon-icon-wrapper">
-        <div
-          class="iconify moon-icon"
-          data-icon="feather-moon"
-          data-inline="false"
-        >
-        </div>
-      </div>
-    </div>
-  </label>
+	<label>
+		<input class="toggle-checkbox" type="checkbox" id="themeSwitch" />
+		<div class="toggle-slot">
+			<div class="sun-icon-wrapper">
+				<div
+					class="iconify sun-icon"
+					data-icon="feather-sun"
+					data-inline="false"
+				>
+				</div>
+			</div>
+			<div class="toggle-button"></div>
+			<div class="moon-icon-wrapper">
+				<div
+					class="iconify moon-icon"
+					data-icon="feather-moon"
+					data-inline="false"
+				>
+				</div>
+			</div>
+		</div>
+	</label>
 
-  <p>
-    San Juan Opico es una Ciudad y distrito de El Salvador perteneciente al
-    municipio de La Libertad Centro que pertenece al departamento de La
-    Libertad.
-  </p>
-  <p>
-    Está ubicado a 42 kilómetros de San Salvador, capital de la república. El
-    municipio tiene un territorio de 218 km² y una población de 74,280
-    habitantes según censo del 2007 ocupando el puesto número 13 en población.
-  </p>
-  <p>
-    Dentro de su territorio está el sitio arqueológico precolombino Joya de
-    Cerén (El Salvador) además de una iglesia construida en la época colonial.
-  </p>
+	<p>
+		San Juan Opico es una Ciudad y distrito de El Salvador perteneciente al
+		departamento de <strong>La Libertad</strong>.
+	</p>
+	<p>
+		Está ubicado a 42 kilómetros de San Salvador, capital de la república. El
+		municipio tiene un territorio de 218 km² y una población de 74,280
+		habitantes según censo del 2007 ocupando el puesto número 13 en población.
+	</p>
+	<p>
+		Dentro de su territorio está el sitio arqueológico precolombino Joya de
+		Cerén, además de una iglesia construida en la época colonial.
+	</p>
+
+	<script>
+		function changeTheme() {
+			const body = document.body;
+			const sunIconWrapper = document.querySelector(".sun-icon-wrapper");
+			const moonIconWrapper = document.querySelector(".moon-icon-wrapper");
+
+			if (body.classList.contains("dark")) {
+				body.classList.remove("dark");
+				sunIconWrapper.style.opacity = "1";
+				sunIconWrapper.style.transform = "translate(2em, 2em) rotate(15deg)";
+				moonIconWrapper.style.opacity = "0";
+				moonIconWrapper.style.transform = "translate(11em, 2em) rotate(0deg)";
+				localStorage.setItem("theme", "light");
+			} else {
+				body.classList.add("dark");
+				sunIconWrapper.style.opacity = "0";
+				sunIconWrapper.style.transform = "translate(3em, 2em) rotate(0deg)";
+				moonIconWrapper.style.opacity = "1";
+				moonIconWrapper.style.transform = "translate(2em, 2em) rotate(-15deg)";
+				localStorage.setItem("theme", "dark");
+			}
+		}
+
+		const themeSwitch = document.getElementById("themeSwitch");
+		const savedTheme = localStorage.getItem("theme");
+
+		if (savedTheme) {
+			document.body.classList.add(savedTheme);
+			themeSwitch.checked = savedTheme === "dark";
+		} else {
+			document.body.classList.add("light");
+		}
+
+		themeSwitch?.addEventListener("change", () => {
+			changeTheme();
+		});
+	</script>
 </header>
 <style>
-   header h1 {
+	header h1 {
 		text-align: center;
 		font-size: 2em;
 	}
 
-  header p {
+	header p {
 		font-size: 1.3em;
 	}
 
-  label {
+	header label {
 		display: flex;
 		align-items: center;
 		cursor: pointer;
@@ -128,5 +165,4 @@
 		opacity: 1;
 		transform: translate(2em, 2em) rotate(-15deg);
 	}
-
 </style>
