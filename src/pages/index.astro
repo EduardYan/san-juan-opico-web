@@ -8,45 +8,6 @@ import Images from "../components/Images.astro";
 	<section>
 		<Header />
 		<Images />
-
-		<script>
-			function changeTheme() {
-				const body = document.body;
-				const sunIconWrapper = document.querySelector(".sun-icon-wrapper");
-				const moonIconWrapper = document.querySelector(".moon-icon-wrapper");
-
-				if (body.classList.contains("dark")) {
-					body.classList.remove("dark");
-					sunIconWrapper.style.opacity = "1";
-					sunIconWrapper.style.transform = "translate(2em, 2em) rotate(15deg)";
-					moonIconWrapper.style.opacity = "0";
-					moonIconWrapper.style.transform = "translate(11em, 2em) rotate(0deg)";
-					localStorage.setItem("theme", "light");
-				} else {
-					body.classList.add("dark");
-					sunIconWrapper.style.opacity = "0";
-					sunIconWrapper.style.transform = "translate(3em, 2em) rotate(0deg)";
-					moonIconWrapper.style.opacity = "1";
-					moonIconWrapper.style.transform =
-						"translate(2em, 2em) rotate(-15deg)";
-					localStorage.setItem("theme", "dark");
-				}
-			}
-
-			const themeSwitch = document.getElementById("themeSwitch");
-			const savedTheme = localStorage.getItem("theme");
-
-			if (savedTheme) {
-				document.body.classList.add(savedTheme);
-				themeSwitch.checked = savedTheme === "dark";
-			} else {
-				document.body.classList.add("light");
-			}
-
-			themeSwitch?.addEventListener("change", () => {
-				changeTheme();
-			});
-		</script>
 	</section>
 </Layout>
 
