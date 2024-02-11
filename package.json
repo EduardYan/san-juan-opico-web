@@ -1,7 +1,7 @@
 {
   "name": "san-juan-opico-web",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "EduardYan",
   "license": "MIT",
   "scripts": {
@@ -12,8 +12,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "4.3.2",
     "@astrojs/check": "0.4.1",
+    "@astrojs/react": "3.0.10",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "astro": "4.3.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "typescript": "5.3.3"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
