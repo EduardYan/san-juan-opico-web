@@ -2,23 +2,29 @@
 
 ---
 
-<div>
+<section>
   <a href="/iglesia.jpg" target="_blank" rel="noreferrer">
     <img src="/iglesia.jpg" alt="imagen de iglesia de San Juan Opico" />
   </a>
   <a href="/parque.jpg" target="_blank" rel="noreferrer">
     <img src="/parque.jpg" alt="imagen del parque de San Juan Opico" />
   </a>
-</div>
+</section>
 <style>
-  div a img {
-		width: 340px;
-		border-radius: 5px;
-		transition: 0.3s all ease;
-		margin-bottom: 20px;
-	}
+  section a img {
+    width: 340px;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+    margin-bottom: 20px;
+  }
 
-  div a img:hover {
-		transform: translateY(-5px);
-	}
+  section a img:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (width < 900px) {
+    section a img {
+      width: 100%;
+    }
+  }
 </style>
