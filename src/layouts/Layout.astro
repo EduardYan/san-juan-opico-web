@@ -10,13 +10,49 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg" href="/favicon.svg" />
+		<title>{title}</title>
 		<meta
 			name="description"
 			content="Información sobre el municipio de San Juan Opico"
 		/>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg" href="/favicon.svg" />
-		<title>{title}</title>
+
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="EduardYan" />
+		<link rel="canonical" href="https://san-juan-opico.vercel.app/" />
+
+		<!-- Open graph -->
+		<meta property="og:url" content="https://san-juan-opico.vercel.app/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="San Juan Opico" />
+		<meta
+			property="og:description"
+			content="Información sobre el municipio de San Juan Opico"
+		/>
+		<meta
+			property="og:image"
+			content="https://san-juan-opico.vercel.app/screenshot.png"
+		/>
+		<meta property="og:site_name" content="San Juan Opico" />
+		<meta property="og:image:alt" content="Previsualización de la web" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="san-juan-opico.vercel.app" />
+		<meta property="twitter:url" content="https://san-juan-opico.vercel.app/" />
+		<meta name="twitter:title" content="San Juan Opico" />
+		<meta
+			name="twitter:description"
+			content="Información sobre el municipio de San Juan Opico"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://san-juan-opico.vercel.app/screenshot.png"
+		/>
 	</head>
 	<body>
 		<main>
